@@ -39,7 +39,8 @@ export default function App() {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6 text-center">
         <p className="text-slate-400 text-lg mb-8 leading-relaxed">
-          누군가에게 닿지 않아도 괜찮은<br/>마음들이 있습니다.
+          전해지지 못한 진심은 사라지지 않고, 이곳에 잠시 머뭅니다.<br/>
+          <span className="text-sm text-slate-400">언젠가 닿을 수도, 혹은 영원히 비밀이 될 수도 있는 마음들.</span>
         </p>
         <button 
           onClick={() => setStep('list')}
@@ -111,10 +112,15 @@ export default function App() {
       </header>
       <textarea 
         className="w-full h-64 p-4 bg-slate-50 rounded-xl focus:outline-none text-slate-700 leading-relaxed mb-4 resize-none"
-        placeholder="완성하지 않아도 괜찮아요. 단어 하나부터 시작해보세요."
+        placeholder="지금은 나만 읽고 있지만, 언젠가 그 사람에게 닿을 날을 꿈꿔봅니다."
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />
+
+      <p className="text-[11px] text-slate-400 mb-6 pl-2 tracking-tight">
+        * 이 기록은 당신의 계정에만 안전하게 보관됩니다. 나중에 비밀 질문 + 링크를 설정해 상대에게만 보여줄 수 있어요.
+      </p>
+
       <div className="flex justify-between items-center mb-12">
         <button onClick={() => setStep('list')} className="text-slate-400 text-sm">목록으로</button>
         <button 
