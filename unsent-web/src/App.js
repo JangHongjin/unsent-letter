@@ -103,7 +103,7 @@ export default function App() {
       </div>
     );
   }
-
+  
   return (
     <div className="min-h-screen bg-white p-6 max-w-lg mx-auto">
       <header className="py-10 text-center">
