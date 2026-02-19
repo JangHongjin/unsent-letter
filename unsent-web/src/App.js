@@ -1,10 +1,31 @@
 import React, { useState, useEffect } from 'react';
 
+// 구글 나눔명조 폰트 적용
+const fontStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+  body { font-family: 'Nanum Myeongjo', serif; }
+`;
+
 export default function App() {
   const [step, setStep] = useState('landing');
+  // 2. 초기 데이터에 예시 추가
   const [spaces, setSpaces] = useState(() => {
     const saved = localStorage.getItem('unsent_spaces');
-    return saved ? JSON.parse(saved) : [];
+    if (saved) return JSON.parse(saved);
+    
+    // 저장된 데이터가 없을 때만 보여줄 예시 데이터
+    return [
+      {
+        id: 1,
+        name: "첫사랑 그 아이",
+        letters: ["복도에서 나던 비누 향기가 가끔 생각나.", "너는 지금쯤 어떤 어른이 되었을까?"]
+      },
+      {
+        id: 2,
+        name: "3년 전의 나에게",
+        letters: ["지금 고민하는 거, 생각보다 별거 아니게 될 거야.", "조금만 더 버텨줘서 고마워."]
+      }
+    ];
   });
   const [currentSpace, setCurrentSpace] = useState(null);
   const [newNickname, setNewNickname] = useState('');
